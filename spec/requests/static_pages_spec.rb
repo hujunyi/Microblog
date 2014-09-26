@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe "StaticPages", :type => :request do
-  let(:main_title) { "Microblog" }
+  let(:base_title) { "Microblog" }
   describe "Home page" do
     it "should have the content 'Microblog'" do
       visit '/static_pages/home'
@@ -10,7 +10,13 @@ RSpec.describe "StaticPages", :type => :request do
 
     it "should have the right title" do
       visit '/static_pages/home'
-      expect(page).to have_title("#{main_title} | Home")
+      expect(page).to have_title(base_title)
+    end
+
+
+    it "should not have a custom page title" do
+      visit '/static_pages/home'
+      expect(page).not_to have_title("| Home")
     end
   end
 
@@ -21,7 +27,7 @@ RSpec.describe "StaticPages", :type => :request do
     end
     it "should have the right title" do
       visit '/static_pages/help'
-      expect(page).to have_title("#{main_title} | Help")
+      expect(page).to have_title("#{base_title} | Help")
     end
 
   end
@@ -33,7 +39,7 @@ RSpec.describe "StaticPages", :type => :request do
     end
     it "should have the right title" do
       visit '/static_pages/about'
-      expect(page).to have_title("#{main_title} | About")
+      expect(page).to have_title("#{base_title} | About")
     end
   end
 
