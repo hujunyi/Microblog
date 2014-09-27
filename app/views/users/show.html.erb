@@ -1,0 +1,11 @@
+<% provide(:title, @user.name) %>
+<div class="media">
+  <a class="pull-left" href="#">
+    <%= image_tag gravatar_for(@user), alt: @user.name, class: "media-object" %>
+  </a>
+  <div class="media-body">
+    <h4 class="media-heading"><%= @user.name %></h4>
+    ...
+  </div>
+</div>
+
