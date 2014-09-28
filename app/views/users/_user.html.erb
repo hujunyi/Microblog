@@ -1,0 +1,11 @@
+<div class="media">
+  <%= image_tag gravatar_for(user), class: "media-object pull-left" %>
+  <div class="media-body">
+    <h4 class="media-heading"><%= link_to user.name, user %></h4>
+  </div>
+  <% if current_user.admin? && !current_user?(user) %>
+    <div class="pull-right">
+      <%= link_to "delete", user, method: :delete, data: {confirm: "Are you sure"} %>
+    </div>
+  <% end %>
+</div>

@@ -29,6 +29,7 @@ group :development, :test do
   gem 'spring'
   gem 'rspec-rails', '~> 3.0.0'
   gem 'rspec-its'
+  gem 'faker'
 end
 group :test do
   gem 'selenium-webdriver'
@@ -46,4 +47,7 @@ gem 'bcrypt', '~> 3.1.7'
 
 # Use debugger
 gem 'debugger', group: [:development, :test]
+
+gem "will_paginate", "~>3.0"
+gem 'will_paginate-bootstrap'
 
