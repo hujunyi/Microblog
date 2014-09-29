@@ -5,7 +5,7 @@
     <div class="form-group">
       <label> Picture </label>
       <%= image_tag gravatar_for(@user), alt: @user.name, class: "media-object" %>
-      <a href="http://gravatar.com/emails">change</a>
+      <%= link_to "change","http://gravatar.com/emails", target: "_blank" %>
     </div>
     <%= render "form" %>
   </div>

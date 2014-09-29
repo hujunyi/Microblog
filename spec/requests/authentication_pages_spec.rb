@@ -46,8 +46,41 @@ RSpec.describe "AuthenticationPages", :type => :request do
 
 
   describe "authorization" do
+
+
+
+
+    describe "for signed in users" do
+      let(:user) { FactoryGirl.create(:user) }
+      before { sign_in user, no_capybara: true }
+
+      describe "submitting a GET request to Users#new" do
+        before { get new_user_path }
+        specify { expect(response).to redirect_to(root_path) }
+      end
+
+      describe "submitting a POST request to Users#create" do
+        let(:params) do { user: { name: "Foo", email: "foo@example.com", password: "password", password_confirmation: "password"} }
+        end
+        before do
+          post users_path, params
+        end
+        specify { expect(response).to redirect_to(root_path) }
+      end
+
+    end
+
+
+
+
+
+
     describe "for non-signed-in users" do
       let(:user) { FactoryGirl.create(:user) }
+
+      it { should_not have_link("Profile", href: user_path(user))}
+      it { should_not have_link("Sign out",href: signout_path)}
+
 
       describe "in the Users controller" do
 
@@ -80,6 +113,7 @@ RSpec.describe "AuthenticationPages", :type => :request do
           it "should render the desired protected page" do
             expect(page).to have_title("Edit user")
           end
+
         end
       end
 
