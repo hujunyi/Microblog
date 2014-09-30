@@ -1,3 +1,19 @@
-<h1>Microblog</h1>
+<% if signed_in? %>
+  <div class="row">
+    <div class="col-xs-4 profile-panel">
+      <%= render "shared/user_info" %>
+      <%= render "shared/micropost_form" %>
+    </div>
+    <div class="col-xs-8 micropost-form">
+      <h1>Micropost Feed</h1>
+      <hr>
+      <%= render "shared/feed" %>
+    </div>
+  </div>
+<% else %>
+  <h1>Welcom to the Microblog </h1>
+<% end %>
+
+
 
 

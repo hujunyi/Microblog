@@ -57,3 +57,21 @@ footer {
     width: 50%; /* 6 columns */
   }
 }
+.tweeted-time{
+  color: #8899a6;
+  display: inline-block;
+  font-size: 13px;
+  transition: color .15s;
+  white-space: nowrap;
+}
+.profile-pic{
+  height: 200px;
+  width: 200px;
+}
+.profile-panel{
+  text-align: center;
+  padding-top: 25px;
+}
+.micropost-form{
+  padding-top: 40px;
+}

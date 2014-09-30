@@ -1,0 +1,15 @@
+<li href="#" class="list-group-item">
+  <span><b><%=@user.name %></b>
+    <span class="tweeted-time">&nbsp;·&nbsp;
+      <%= time_ago_in_words(micropost.created_at) %> ago.
+      <% if current_user?(micropost.user) %>
+      <%= link_to "delete", micropost, method: :delete, data: {confirm: "Are you sure"} %>
+    <% end %>
+    </span>
+    
+  </span>
+  <p class="list-group-item-text">
+  <%= micropost.content %>
+  </p>
+  
+</li>
