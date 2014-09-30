@@ -3,11 +3,6 @@ namespace :db do
 
   task populate: :environment do
     Rake::Task["db:reset"].invoke
-    admin = User.create!(name: "Joey Hu",
-                         email: "hujunyi1990@gmail.com",
-                         password: ENV["GMAIL_PASSWORD"],
-                         password_confirmation: ENV["GMAIL_PASSWORD"],
-                         admin: true)
     99.times do |n|
       name = Faker::Name.name
       email = "example-#{n+1}@joeyhu.info"
@@ -17,6 +12,12 @@ namespace :db do
                    password: password,
                    password_confirmation: password)
     end
+    admin = User.create!(name: "Joey Hu",
+                         email: "hujunyi1990@gmail.com",
+                         password: ENV["GMAIL_PASSWORD"],
+                         password_confirmation: ENV["GMAIL_PASSWORD"],
+                         admin: true)
+
     users = User.all
     50.times do
       content = Faker::Lorem.sentence(5)
