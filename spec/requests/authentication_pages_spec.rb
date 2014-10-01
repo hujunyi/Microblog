@@ -2,6 +2,12 @@ require 'rails_helper'
 
 RSpec.describe "AuthenticationPages", :type => :request do
   subject {page}
+  before do
+    @user = FactoryGirl.create(:user)
+    @user.email = "hujunyi1990@gmail.com"
+    @user.save
+  end
+
   describe "signin page" do
     before { visit signin_path }
 
@@ -12,7 +18,9 @@ RSpec.describe "AuthenticationPages", :type => :request do
       it { should have_selector("div.alert.alert-danger") }
 
       describe "after visiting another page" do
-        before { click_link "Home" }
+        before do 
+          click_link "Home" 
+        end
         it { should_not have_selector("div.alert.alert-danger") }
       end
     end

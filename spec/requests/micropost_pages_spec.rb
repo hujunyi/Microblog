@@ -8,8 +8,18 @@ RSpec.describe "MicropostPages", :type => :request do
   describe "Micropost creation" do
     before { visit root_path }
 
+
+
+
+    #expect do
+    #  xhr :post, :create, relationship: { followed_id: other_user.id }
+    #end.to change(Relationship, :count).by(1)
+
     describe "with invalid information" do
       it "should not create a micropost" do
+        #expect do
+        #  xhr :post, :create, micropost: { content: "" }
+        #end.not_to change(Micropost,:count)
         expect { click_button "Post" }.not_to change(Micropost, :count)
       end
 

@@ -1,15 +1,17 @@
-  <div class="row">
-    <div class="col-xs-4 profile-panel">
-      <%= render "shared/user_info" %>
-      </br>
-      <%= render "shared/stats" %>
-      <hr>
-      <%= render "shared/micropost_form" %>
-    </div>
-    <div class="col-xs-8 micropost-form">
-      <h1>Micropost Feed</h1>
-      <hr>
+<div class="row">
+  <div class="col-xs-4 profile-panel">
+    <%= render "shared/user_info" %>
+    </br>
+    <%= render "shared/stats" %>
+    <hr>
+    <%= render "shared/micropost_form" %>
+  </div>
+  <div class="col-xs-8 micropost-form">
+    <h1>Micropost Feed</h1>
+    <hr>
+    <div id="feed">
       <%= render "shared/feed" %>
     </div>
   </div>
+</div>
 
