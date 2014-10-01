@@ -12,6 +12,7 @@ gem 'coffee-rails', '~> 4.0.0'
 # See https://github.com/sstephenson/execjs#readme for more supported runtimes
 # gem 'therubyracer',  platforms: :ruby
 gem 'pg'
+gem 'faker'
 
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
@@ -27,7 +28,6 @@ group :development, :test do
   gem 'spring'
   gem 'rspec-rails', '~> 3.0.0'
   gem 'rspec-its'
-  gem 'faker'
 end
 group :test do
   gem 'selenium-webdriver'
