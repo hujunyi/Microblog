@@ -6,9 +6,14 @@ Rails.application.routes.draw do
   match '/signup', to:'users#new', via: 'get'
   match '/signin', to:'sessions#new', via: 'get'
   match '/signout', to:'sessions#destroy', via: 'delete'
-  resources :users
+  resources :users do
+    member do
+      get :following, :followers
+    end
+  end
   resources :microposts, only: [:create, :destroy]
   resources :sessions, only: [:new, :create, :destroy]
+  resources :relationships, only: [:create, :destroy]
 
 
   # The priority is based upon order of creation: first created -> highest priority.

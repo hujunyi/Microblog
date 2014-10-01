@@ -72,6 +72,16 @@ footer {
   text-align: center;
   padding-top: 25px;
 }
-.micropost-form{
-  padding-top: 40px;
+.title-name {
+  color: black;
+}
+.user_atten li{
+  float: left;
+  margin: 0 5px 0 0;
+  padding: 0 5px 0 0;
+  border-right-width: 1px;
+  list-style: none;
+}
+.post-item p{
+  font-style: italic
 }

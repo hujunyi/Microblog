@@ -82,11 +82,33 @@ RSpec.describe "AuthenticationPages", :type => :request do
       it { should_not have_link("Sign out",href: signout_path)}
 
 
+      describe "in the Relationships controller" do
+        describe "submitting to the create action" do
+          before { post relationships_path }
+          specify { expect(response).to redirect_to(signin_path) }
+        end
+
+        describe "submitting to the destroy" do
+          before { delete relationship_path(1) }
+          specify { expect(response).to redirect_to(signin_path) }
+        end
+      end
+
+
       describe "in the Users controller" do
 
         describe "visiting the edit page" do
           before { visit edit_user_path(user) }
           it { should have_title("Sign in") }
+        end
+        describe "visiting the following page" do
+          before { visit following_user_path(user) }
+          it { should have_title('Sign in') }
+        end
+
+        describe "visiting the followers page" do
+          before { visit followers_user_path(user) }
+          it { should have_title('Sign in') }
         end
 
         describe "submitting to the update action" do

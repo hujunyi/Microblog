@@ -1,0 +1,20 @@
+<% provide(:title,@title) %>
+<div class="row">
+  <div class="col-xs-4">
+    <%= render "shared/user_info" %>
+    <%= render "shared/stats" %>
+    <!--
+    <% @users.each do |user| %>
+      <%= link_to image_tag(gravatar_for(user)), user %>
+    <% end %>
+    -->
+  </div>
+  <div class="col-xs-8">
+    <h3><%= @title %></h3>
+    <% if @users.any? %>
+      <%= will_paginate @users, renderer: BootstrapPagination::Rails %>
+      <%= render @users %>
+
+    <% end %>
+  </div>
+</div>
