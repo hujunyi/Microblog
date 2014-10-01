@@ -13,6 +13,7 @@ gem 'coffee-rails', '~> 4.0.0'
 # gem 'therubyracer',  platforms: :ruby
 gem 'pg'
 gem 'faker'
+gem 'newrelic_rpm'
 
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
