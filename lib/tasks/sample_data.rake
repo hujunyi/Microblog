@@ -21,8 +21,8 @@ def make_users
   end
   admin = User.create!(name: "Joey Hu",
                        email: "hujunyi1990@gmail.com",
-                       password: ENV["GMAIL_PASSWORD"],
-                       password_confirmation: ENV["GMAIL_PASSWORD"],
+                       password: "123456",
+                       password_confirmation: "123456",
                        admin: true)
 end
 

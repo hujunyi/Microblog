@@ -50,4 +50,5 @@ gem 'debugger', group: [:development, :test]
 
 gem "will_paginate", "~>3.0"
 gem 'will_paginate-bootstrap'
+gem 'rails_12factor', group: :production
 
