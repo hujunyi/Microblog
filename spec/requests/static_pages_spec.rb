@@ -78,10 +78,6 @@ RSpec.describe "StaticPages", :type => :request do
     visit root_path
     click_link "About"
     expect(page).to have_title(full_title('About'))
-    click_link "Help"
-    expect(page).to have_title(full_title('Help'))
-    click_link "Contact"
-    expect(page).to have_title(full_title('Contact'))
     click_link "Home"
     click_link "Sign up"
     expect(page).to have_title(full_title('Sign up'))
