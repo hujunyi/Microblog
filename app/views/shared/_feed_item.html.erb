@@ -2,7 +2,7 @@
 <%= link_to image_tag(gravatar_for(feed_item.user), class: "media-object"), feed_item.user, class: "pull-left"  %>
 <div class="media-body">
   <h4 class="media-heading"><%= link_to feed_item.user.name, feed_item.user %></h4>
-  <span><%= feed_item.content %></span>
+  <span><%= markdown feed_item.content %></span>
   <span >
     Posted <%= time_ago_in_words(feed_item.created_at) %> ago.
   </span>
