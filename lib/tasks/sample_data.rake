@@ -40,7 +40,7 @@ end
 def make_relationships
   users = User.all
   user = User.find_by(email: "hujunyi1990@gmail.com")
-  demo_posts = ["Welcom to the microblog!", "This demo app is built on Ruby on Rails and Bootstrap.","I strictly followed TDD to develop this app. And I used Rspec/Capybara as my test script frameworks.", "The live version is hosted in my Heroku.","This is a twitter-like app in which you can post your microposts and followed others'.", "Source Code can be found here: http://github.com/hujunyi/Microblog"]
+  demo_posts = ["Welcom to the microblog!", "This demo app is built on Ruby on Rails and Bootstrap.","I strictly followed TDD to develop this app. And I used Rspec/Capybara as my test script frameworks.", "The live version is hosted in my Heroku.","This is a twitter-like app in which you can post your microposts and follow others'.", "Source Code can be found here: http://github.com/hujunyi/Microblog"]
   followed_users = users[2..50]
   followers = users[3..40]
   followed_users.each { |followed| user.follow!(followed) }
