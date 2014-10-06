@@ -91,3 +91,17 @@ footer {
 .center{
   text-align: center;
 }
+.stats div{
+  color: #8c9ca9;
+  font-size: 10px;
+  letter-spacing: .02em;
+  text-transform: uppercase;
+  transition: color .15s ease-in-out;
+}
+.stats span{
+  display: block;
+  font-size: 18px;
+  padding-top: 3px;
+  font-weight: 500;
+  transition: color .15s ease-in-out;
+}

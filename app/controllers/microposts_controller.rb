@@ -9,6 +9,7 @@ class MicropostsController < ApplicationController
   def create
     @micropost = current_user.microposts.build(micropost_params)
     @micropost.save
+    @user = current_user
     @feed_items = current_user.feed.paginate(page: params[:page])
     respond_to do |format|
       format.html { render "static_pages/home"}

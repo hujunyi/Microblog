@@ -2,6 +2,7 @@
   $("#post-errors").html("<%= escape_javascript(render("shared/error_messages",object: @micropost)) %>")
 <% else %>
   $("#post-errors").html("");
+  $("#posts-count").html("<%= @user.microposts.count %>");
   $("#feed").html("<%= escape_javascript(render('shared/feed')) %>");
   $("#micropost_content").val("");
 <% end %>

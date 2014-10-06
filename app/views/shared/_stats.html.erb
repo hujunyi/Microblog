@@ -1,20 +1,21 @@
-<% @user ||= current_user %>
-<ul class="user_atten">
-  <li>
+<% @user ||= current_user %>   
+<ul class="list-inline">       
+  <li class="stats">
+  <div>Following</div>
   <%= link_to following_user_path(@user) do %>
     <span id='following'><%= @user.followed_users.count %></span>
-    <span>following</span>
   <% end %>
   </li>
-  <li>
+  <li class="stats">
+  <div>Followers</div>     
   <%= link_to followers_user_path(@user) do %>
     <span id='followers'><%= @user.followers.count %></span>
-    <span>followers</span>
   <% end %>
   </li>
-  <li>
-  <%= link_to following_user_path(@user) do %>
-    <%= pluralize(@user.microposts.count, "micropost") %>
+  <li class="stats">
+  <div>Posts</div>         
+  <%= link_to user_path(@user) do %>
+    <span id="posts-count"><%= @user.microposts.count %></span>
   <% end %>
-  </li>
-</ul>
+  </li> 
+</ul>   

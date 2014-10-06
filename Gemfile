@@ -29,6 +29,7 @@ group :development, :test do
   gem 'spring'
   gem 'rspec-rails', '~> 3.0.0'
   gem 'rspec-its'
+  gem 'debugger'
 end
 group :test do
   gem 'selenium-webdriver'
@@ -44,7 +45,6 @@ gem 'bcrypt', '~> 3.1.7'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
-# Use debugger
 gem 'debugger', group: [:development, :test]
 gem "will_paginate", "~>3.0"
 gem 'will_paginate-bootstrap'
